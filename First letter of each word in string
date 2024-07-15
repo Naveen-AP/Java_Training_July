@@ -6,16 +6,21 @@ public class first_letter_in_string
     {
         Scanner ip=new Scanner(System.in);
         String st=ip.nextLine();
-        String [] words=st.split("\\s+");
-        for(int i=0;i<words.length;i++)
+        int l1=0;
+        String [] words=st.split(" ");
+
+        for (int i=0;i< words.length;i++)
         {
             if(!words[i].isEmpty())
             {
-                System.out.print(words[i].charAt(0));
+                System.out.print(words[i].charAt(0)+" ");
             }
+
         }
+
     }
 }
+
 
 Input:
 This is Naveen. Iam From KSR College Of technology

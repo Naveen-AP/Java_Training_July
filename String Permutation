@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class StringPermutations {
+    private static void perm(String prefix, String str, int[] count) {
+        int n = str.length();
+        if (n == 0) {
+            System.out.println(prefix);
+            count[0]++;
+        } else {
+            for (int i = 0; i < n; i++) {
+                perm(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, n), count);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        int[] count = new int[1];
+        perm("", input, count);
+        System.out.println("Total number of permutations: " + count[0]);
+    }
+}
